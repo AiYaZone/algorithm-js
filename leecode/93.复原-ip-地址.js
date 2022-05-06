@@ -73,10 +73,9 @@ var restoreIpAddresses = function (s) {
     // 一般情况，枚举每一种可能性并递归
     let addr = 0;
     for (let segEnd = segStart; segEnd < s.length; ++segEnd) {
-      // 硬是没看懂 为什么*10？？（addr * 10）
-      // - '0'表示 字符转数字
-      addr = addr * 10 + (s.charAt(segEnd) - '0');
-      if (addr > 0 && addr <= 0xFF) {
+      // （addr * 10）表示下一轮循环时，10进制的原数字向上升一位
+      addr = addr * 10 + Number(s.charAt(segEnd));
+      if (addr > 0 && addr <= 255) {
         segments[segId] = addr;
         dfs(s, segId + 1, segEnd + 1);
       } else {
