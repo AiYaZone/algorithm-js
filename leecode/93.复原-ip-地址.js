@@ -1,4 +1,10 @@
-/*jshint esversion: 6 */
+/*
+ * @lc app=leetcode.cn id=93 lang=javascript
+ *
+ * [93] 复原 IP 地址
+ */
+
+// @lc code=start
 
 /**
  * @file 还原IP地址--算法：回溯？？
@@ -84,6 +90,4 @@ var restoreIpAddresses = function (s) {
   return ans;
 
 };
-
-var ss = restoreIpAddresses('123412112');
-console.info(ss);
+// @lc code=end
